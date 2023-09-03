@@ -4,7 +4,7 @@ import { useLoaderData, useParams } from 'react-router-dom'
 const CareerDetails = () => {
 
     const career = useLoaderData()
-    console.log(career)
+    // console.log(career)
 
   return (
     <div className="career-details">

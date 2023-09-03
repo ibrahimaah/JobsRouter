@@ -1,8 +1,15 @@
-import { Link, useLoaderData } from "react-router-dom"
+import { useState } from "react";
+import { Link, Navigate, useLoaderData } from "react-router-dom"
 
 const Careers = () => {
 
+    const [user,setUser] = useState('Ibrahim');
+
     const careers = useLoaderData();
+    
+    if (!user) {
+        return <Navigate to='/'/>
+    }
     
   return (
         <div className="careers">
@@ -12,6 +19,8 @@ const Careers = () => {
                 <p>Based in {career.location}</p>
             </Link>
             ))}
+
+            <button onClick={()=>setUser(null)}>LogOut</button>
         </div>
     )
 }
